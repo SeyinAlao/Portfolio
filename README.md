@@ -1,42 +1,87 @@
-# sv
+# Seyin | Interactive Portfolio 2026
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+An immersive, high-performance developer portfolio built with **SvelteKit**. This project moves beyond a static "About Me" page — it's an engineered experience that showcases frontend mastery through cinematic transitions, interactive components, and optimized delivery.
 
-## Creating a project
+**Live Demo:** [Insert Vercel/Netlify Link]  
+**Tech Stack:** SvelteKit, Tailwind CSS, Motion One, Lucide Svelte
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## 🚀 Setup & Local Development
 
-To recreate this project with the same configuration:
+1. **Clone & Install:**
+   ```bash
+   npm install
+   ```
 
-```sh
-# recreate this project
-npx sv@0.15.3 create --template minimal --types ts --add prettier tailwindcss="plugins:typography,forms" eslint --install npm seyin-portfolio
-```
+2. **Run Dev Server:**
+   ```bash
+   npm run dev
+   ```
 
-## Developing
+3. **Build & Preview:**
+   ```bash
+   npm run build
+   npm run preview
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+---
 
-```sh
-npm run dev
+## 🏗️ Architecture & Component Strategy
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### 1. SvelteKit & Component Composition
 
-## Building
+The project uses **SvelteKit** for its robust routing and server-side rendering (SSR) capabilities.
 
-To create a production version of your app:
+- **Isomorphic Rendering:** SSR delivers a fast initial paint and strong SEO, then hydrates into a highly reactive Single Page Application (SPA).
+- **Component-Driven Design:** Every UI element (Buttons, Project Cards, Modals) is a reusable Svelte component with scoped styles, keeping the codebase clean and maintainable.
+- **Stores for Global State:** Svelte's native `writable` stores manage theme persistence and global animation states.
 
-```sh
-npm run build
-```
+### 2. Creative Feature: Interactive Terminal / Command Palette
 
-You can preview the production build with `npm run preview`.
+To meet the "Advanced Creative Feature" requirement, I implemented a **Terminal-Driven Navigation** system.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- Users can interact with the portfolio via a command-line interface or a traditional GUI.
+- This demonstrates complex state handling and user interaction engineering beyond simple click events.
+
+---
+
+## 🎬 Animation Decisions
+
+Animation is at the heart of the experience. The focus was on **Motion Orchestration** — fluid, not flashy.
+
+- **Native Svelte Transitions:** `fly`, `fade`, and `draw` handle lightweight, performant entrance animations without external library bloat.
+- **Motion One:** Used for complex, hardware-accelerated timeline sequences in the Hero section.
+- **Staggered Reveals:** Intersection observers trigger staggered animations on scroll to maintain a natural narrative flow.
+
+---
+
+## ⚡ Performance Optimization
+
+Performance is treated as a core feature, targeting perfect Lighthouse scores:
+
+- **Image Optimization:** Modern `avif`/`webp` formats with lazy loading to minimize LCP (Largest Contentful Paint).
+- **Code Splitting:** Automatic route-level code splitting ensures users only download JavaScript needed for the current view.
+- **Partial Hydration Thinking:** Non-interactive components are kept static to minimize client-side JS.
+- **Bundle Efficiency:** Vite's tree-shaking keeps the production bundle lean.
+
+---
+
+## ♿ Accessibility (A11y)
+
+The portfolio is designed to be inclusive from the ground up:
+
+- **Keyboard Navigation:** Full focus-trap management for modals and interactive elements.
+- **ARIA Roles:** Proper semantic HTML and ARIA labels throughout for screen reader support.
+- **Motion Accessibility:** A `prefers-reduced-motion` media query check disables intensive animations for users with vestibular sensitivities.
+- **Contrast & Typography:** Rigorous adherence to WCAG 2.1 color contrast ratios.
+
+---
+
+## ⚖️ Trade-offs Made
+
+- **Svelte vs. React:** Chose Svelte for its "vanishing framework" philosophy — more complex animations with significantly less code and better runtime performance than virtual DOM alternatives.
+- **Custom CSS vs. Animation Libraries:** Native CSS and Svelte transitions over large libraries like Framer Motion, prioritizing bundle size and execution speed.
+- **Manual State vs. External Libraries:** Native Svelte stores over a heavy state-management library to reduce complexity and keep logic close to the components.
+
+---
