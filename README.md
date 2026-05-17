@@ -2,8 +2,8 @@
 
 An immersive, high-performance developer portfolio built with **SvelteKit**. This project moves beyond a static "About Me" page — it's an engineered experience that showcases frontend mastery through cinematic transitions, interactive components, and optimized delivery.
 
-**Live Demo:** [Insert Vercel/Netlify Link]  
-**Tech Stack:** SvelteKit, Tailwind CSS, Motion One, Lucide Svelte
+**Live Demo:** https://portfolio-three-mocha-sh0pemwljn.vercel.app/  
+**Tech Stack:** SvelteKit, Tailwind CSS, Motion One, GSAP, Lucide Svelte
 
 ---
 
